@@ -1,0 +1,50 @@
+<!-- [ Mirror metadata ] generatedAt: 1475578214948 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/activity_category_item_view">
+        <!-- ImageView Examples:
+        <iv_cancel src="@drawable/image_resource" />
+        <iv_cancel src="relative_path/image.jpg" /> -->
+        <iv_cancel />
+        <!-- TextView Examples:
+        <tv_category_title text="@string/string_resource" />
+        <tv_category_title text="Text literal" textSize="14sp" /> -->
+        <tv_category_title />
+        <tv_item_title />
+        <iv_fav />
+        <viewpager_recipe_image>
+            <!-- Add pages to your ViewPager here like so:
+            <_page title="page title" icon="@drawable/my_icon"/>
+            <_page layout="@layout/my_page_layout">
+                <my_image_view src="@drawable/my_image"/>
+            </_page>
+            -->
+        </viewpager_recipe_image>
+        <iv_preparation_time />
+        <tv_preparation_time />
+        <iv_cook_time />
+        <tv_cook_time />
+        <iv_fermantation_time />
+        <tv_fermantation_time />
+        <iv_soaking_time />
+        <tv_soaking_time />
+        <tv_discription_title />
+        <tv_discription />
+        <tv_stepViseRecipe />
+        <bg_play_steps1 />
+        <bg_play_steps2 />
+        <iv_step />
+        <tv_ingredient />
+        <tv_twoPerson />
+        <tv_fourPerson />
+        <tv_sixPerson />
+        <tv_addToShoppingList />
+        <iv_bottom />
+        <iv_comments />
+        <tv_comments />
+    </_content>
+</screen>

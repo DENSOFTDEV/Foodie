@@ -1,0 +1,159 @@
+<!--<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"--><!--xmlns:card_view="http://schemas.android.com/apk/res-auto"--><!--android:id="@+id/card_view"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:layout_gravity="center"--><!--card_view:cardUseCompatPadding="true"--><!--card_view:cardCornerRadius="4dp">-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_fav_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_recipe_item"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"
+            android:background="@color/viewBackground"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_fav_cat_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_recipe_item"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="PASTA "
+            android:textAllCaps="true"
+            android:textColor="@color/saladGreen"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_recipe_item"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/tv_fav_cat_name"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/iv_preparation_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/ic_preparation_time"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_preparation_time"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:text="10"
+                android:paddingTop="6dp"
+                android:textColor="@color/saladGreen"
+                android:textSize="12sp"
+                android:visibility="gone" />
+            <ImageView
+                android:id="@+id/iv_cook_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/ic_cook_time"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_cook_time"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:text="10"
+                android:paddingTop="6dp"
+                android:textColor="@color/saladGreen"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_fermantation_time"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_fermantation_time"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_fermantation_time"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:text="10"
+                android:paddingTop="5dp"
+                android:textColor="@color/saladGreen"
+                android:textSize="12sp"
+                android:visibility="gone" />
+            
+            <ImageView
+                android:id="@+id/iv_soaking_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_soaking_time"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_soaking_time"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:text="10"
+                android:paddingTop="5dp"
+                android:textColor="@color/saladGreen"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_fav_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_fav_cat_name"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Cheese paste "
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/iv_fav"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/iv_recipe_item"
+            android:layout_marginLeft="-69dp"
+            android:layout_marginTop="-24dp"
+            android:layout_toRightOf="@+id/iv_recipe_item"
+            android:background="@drawable/bg_green_circle"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="7dp"
+            android:src="@drawable/ic_select" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/saladGreen" />
+</LinearLayout><!--</android.support.v7.widget.CardView>-->

@@ -1,0 +1,99 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_plain"
+    android:orientation="vertical"
+    android:paddingTop="30dp">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="5dp"
+            android:padding="7dp"
+            android:src="@drawable/ic_back_gray" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/comment"
+            android:textAllCaps="true"
+            android:textColor="@color/colorAppName_cd4a2c"
+            android:textSize="20sp"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <com.github.ornolfr.ratingview.RatingView
+        android:id="@+id/rating_set_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        app:drawable_empty="@drawable/ic_star"
+        app:drawable_filled="@drawable/ic_star_fill"
+        app:drawable_margin="4dp"
+        app:drawable_size="25dp"
+        app:is_indicator="false"
+        app:max_count="5"
+        app:rating="0" />
+
+    <EditText
+        android:id="@+id/edt_review_here"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginLeft="@dimen/activity_rightLeft_margin"
+        android:layout_marginRight="@dimen/activity_rightLeft_margin"
+        android:layout_marginTop="15dp"
+        android:background="@color/viewBackground"
+        android:gravity="start"
+        android:hint="@string/comment"
+        android:inputType="text"
+        android:padding="10dp"
+        android:paddingLeft="4dp"
+        android:textSize="15sp" />
+
+
+    <!--<Button-->
+        <!--android:id="@+id/btn_review_submit"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:layout_marginBottom="18dp"-->
+        <!--android:layout_marginTop="25dp"-->
+        <!--android:background="@drawable/bg_button"-->
+        <!--android:paddingBottom="13dp"-->
+        <!--android:paddingLeft="50dp"-->
+        <!--android:paddingRight="50dp"-->
+        <!--android:paddingTop="13dp"-->
+        <!--android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"-->
+        <!--android:text="@string/submit"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:textSize="15sp" />-->
+    <Button
+        android:id="@+id/btn_review_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="18dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/bg_button"
+        android:paddingBottom="15dp"
+        android:paddingLeft="70dp"
+        android:paddingRight="70dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:paddingTop="15dp"
+        android:text="@string/submit"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+
+</LinearLayout>

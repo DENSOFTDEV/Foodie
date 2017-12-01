@@ -1,0 +1,28 @@
+<!-- [ Mirror metadata ] generatedAt: 1475578215117 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/row_favorite_list_item">
+        <!-- ImageView Examples:
+        <iv_recipe_item src="@drawable/image_resource" />
+        <iv_recipe_item src="relative_path/image.jpg" /> -->
+        <iv_recipe_item />
+        <!-- TextView Examples:
+        <tv_fav_cat_name text="@string/string_resource" />
+        <tv_fav_cat_name text="Text literal" textSize="14sp" /> -->
+        <tv_fav_cat_name />
+        <iv_cook_time />
+        <tv_cook_time />
+        <iv_fermantation_time />
+        <tv_fermantation_time />
+        <iv_preparation_time />
+        <tv_preparation_time />
+        <iv_soaking_time />
+        <tv_soaking_time />
+        <tv_fav_item_name />
+        <iv_fav />
+    </_content>
+</screen>

@@ -1,0 +1,113 @@
+<resources>
+    <string name="app_name">Foodie</string>
+
+
+
+    <!--LogIn-->
+    <string name="login_to_ur_recipe_account">Login to your recipe account </string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="loginWithFacebook">Login with Facebook</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="dont_have_account">Don\'t Have an Account? Signup </string>
+    <string name="enterUsername">Enter valid Username</string>
+    <string name="enterPassword">Enter valid Password</string>
+    <string name="ok">OK</string>
+    <string name="submit">SUBMIT</string>
+
+    <!--Register-->
+    <string name="createAccount"> Create your account</string>
+    <string name="email">Email Address:</string>
+    <string name="username_signup">Username: </string>
+    <string name="passwordsignUp">Password:</string>
+    <string name="gender">Gender: </string>
+    <string name="signUp">Sign Up</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="already_have_account"> Already Have an Account? Signin </string>
+
+    <string name="validUsername">Username should contains only alphanumeric characters.</string>
+    <string name="limitUsername">Username should contains between 6 to 15 characters.</string>
+    <string name="enterEmail">Please, Enter Email address.</string>
+    <string name="validEmail">Enter valid Email address.</string>
+    <string name="validPassword">Enter valid Password.</string>
+    <string name="limitPassword">Password should contains between 6 to 25 characters.</string>
+    <string name="paswordDifferent">Mismatch confirm and new password</string>
+    <string name="fbUserNotAllowed">Facebook Users Not Allowed!!</string>
+    <string name="enteredPasswordWrong">Your Current Password is Wrong!!</string>
+    <string name="entryNull">Enter The Current Password</string>
+    <string name="entrynewPass">Enter The New Password</string>
+    <string name="entryconfirmPass">Enter The Confirm Password</string>
+
+    <!--Home Activity-->
+
+    <string name="cookingFreePsdKit">A complete cooking free\npsd kit</string>
+    <string name="findRecipe">FIND A RECIPE</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="swipe_for_show_recipe">Swipe for show next recipe</string>
+    <string name="no_idea_today">No idea today?</string>
+    <string name="discover">Discover</string>
+    <string name="discover_mode">DISCOVER MODE</string>
+
+
+    <string name="add_to_shopping_list">ADD TO SHOPPING LIST</string>
+    <string name="close">Close</string>
+    <string name="add_all">Add All</string>
+    <string name="start_cooking">Start Cooking</string>
+    <string name="search">SEARCH</string>
+    <string name="recipes">Recipes</string>
+    <string name="ingredients">Ingredients</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="shopping_list">Shopping List</string>
+    <string name="steps">Today,We shall discuss on how to prepare the delicious vegitarian shushid on 5 easy steps, Take a look.</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="pre">Previous</string>
+    <string name="change_password">Change Password</string>
+    <string name="current_password">Current Password</string>
+    <string name="adpack">Remove advertising</string>
+    <string name="recipe">Unlock premium recipes</string>
+    <string name="ad_recipe">No advertising + premium recipes</string>
+    <string name="store">STORE</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="offer_me_another_recipe">Offer me another recipe</string>
+    <string name="comment">Comment</string>
+    <string name="welcome">Wellcome Guest</string>
+    <string name="no_internet_connection">No Internet connection!</string>
+    <string name="try_after_some_time">Please,Try After Some Time!</string>
+
+    <string name="fav_added">Recipe Added into your Favorite List</string>
+    <string name="fav_removed">Recipe removed from your Favorite List</string>
+    <string name="you_must_be_login_first">You must be login first.</string>
+    <string name="cancel">Cancel</string>
+    <string name="already_added">"You have already Added this item in Shoppinglist"</string>
+    <string name="give_rating">Please Give Rating</string>
+    <string name="enter_comment">Please Enter Comment</string>
+    <string name="fb_users_cant_change_password">Password Change Not Allowed For Facebook Users</string>
+    <string name="are_u_sure_want_to_logout">Are you sure you want to Logout?</string>
+    <string name="are_u_sure_want_to_delete">Are you sure you want to Delete?</string>
+    <string name="browse_recipe">Browse Recipe</string>
+    <string name="added_to_shopping_list">Ingredients Added to Shopping List</string>
+
+
+    <!-- Google Admob Keys -->
+    <string name="banner_home_footer">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="interstitial_full_screen">ca-app-pub-3940256099942544/1033173712</string>
+
+    <!-- Facebook App Key -->
+    <string name="fb_app_id">253045258523430</string>
+
+
+
+    <string name="video">Video</string>
+    <string name="setp_by_step">Step by step</string>
+
+
+</resources>

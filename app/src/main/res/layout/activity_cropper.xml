@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_cropper"
+    android:paddingTop="25dp"
+    android:background="@drawable/bg_plain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/tv_save_crop"
+    android:text="Save"
+    android:padding="10dp"
+    android:textSize="18sp"
+    android:layout_marginRight="5dp"
+    android:textAllCaps="true"
+    android:textColor="@color/black"
+    android:layout_gravity="end"
+    />
+    <com.theartofdev.edmodo.cropper.CropImageView
+        android:id="@+id/cropImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+    <!--<com.ihome.fontart.crop_views.CropImageView-->
+    <!--android:id="@+id/image_crop"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:adjustViewBounds="true"-->
+    <!--android:background="#55000000" />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btn_lRotate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/crop_image_menu_rotate_left" />
+
+        <View
+            android:layout_width="25dp"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/btn_rRotate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/crop_image_menu_rotate_right" />
+    </LinearLayout>
+</LinearLayout>

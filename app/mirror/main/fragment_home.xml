@@ -1,0 +1,45 @@
+<!-- [ Mirror metadata ] generatedAt: 1475578215051 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/fragment_home">
+        <!-- TextView Examples:
+        <tv_title text="@string/string_resource" />
+        <tv_title text="Text literal" textSize="14sp" /> -->
+        <tv_title />
+        <!-- ImageView Examples:
+        <iv_search src="@drawable/image_resource" />
+        <iv_search src="relative_path/image.jpg" /> -->
+        <iv_search />
+        <tv_search />
+        <grid_recipe_catagory>
+            <items layout="@android:layout/simple_list_item_1" >
+                <_item>
+                    <text1>Apple</text1>
+                </_item>
+                <_item>
+                    <text1>Orange</text1>
+                </_item>
+                <_item>
+                    <text1>Pear</text1>
+                </_item>
+                <_item>
+                    <text1>Grapefruit</text1>
+                </_item>
+                <_item>
+                    <text1>Banana</text1>
+                </_item>
+                <_item>
+                    <text1>Lemon</text1>
+                </_item>
+                <_item>
+                    <text1>Carrot</text1>
+                </_item>
+            </items>
+                </grid_recipe_catagory>
+        <tv_discover />
+    </_content>
+</screen>

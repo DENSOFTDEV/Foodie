@@ -1,0 +1,18 @@
+<!-- [ Mirror metadata ] generatedAt: 1475578215112 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/row_category_item_view">
+        <!-- ImageView Examples:
+        <iv_recipe_item src="@drawable/image_resource" />
+        <iv_recipe_item src="relative_path/image.jpg" /> -->
+        <iv_recipe_item />
+        <!-- TextView Examples:
+        <tv_recipe_name text="@string/string_resource" />
+        <tv_recipe_name text="Text literal" textSize="14sp" /> -->
+        <tv_recipe_name />
+    </_content>
+</screen>

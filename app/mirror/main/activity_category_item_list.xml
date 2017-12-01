@@ -1,0 +1,31 @@
+<!-- [ Mirror metadata ] generatedAt: 1475578214938 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <actionbar showTabsFor="@id/view_pager"/>
+    <_content layout="@layout/activity_category_item_list">
+        <!-- ImageView Examples:
+        <iv_top src="@drawable/image_resource" />
+        <iv_top src="relative_path/image.jpg" /> -->
+        <iv_top />
+        <iv_back />
+        <iv_search />
+        <toolbar_logo_below />
+        <!-- TextView Examples:
+        <tv_page_title text="@string/string_resource" />
+        <tv_page_title text="Text literal" textSize="14sp" /> -->
+        <tv_page_title />
+        <tv_totalRecipe />
+        <view_pager>
+            <!-- Add pages to your ViewPager here like so:
+            <_page title="page title" icon="@drawable/my_icon"/>
+            <_page layout="@layout/my_page_layout">
+                <my_image_view src="@drawable/my_image"/>
+            </_page>
+            -->
+        </view_pager>
+    </_content>
+</screen>

@@ -1,0 +1,27 @@
+<!-- [ Mirror metadata ] generatedAt: 1475578215150 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/row_weekly_item_view">
+        <!-- ImageView Examples:
+        <iv_weekly_itemimage src="@drawable/image_resource" />
+        <iv_weekly_itemimage src="relative_path/image.jpg" /> -->
+        <iv_weekly_itemimage />
+        <!-- TextView Examples:
+        <tv_weekly_day text="@string/string_resource" />
+        <tv_weekly_day text="Text literal" textSize="14sp" /> -->
+        <tv_weekly_day />
+        <tv_weekly_itemname />
+        <iv_preparation_time />
+        <tv_preparation_time />
+        <iv_cook_time />
+        <tv_cook_time />
+        <iv_fermantation_time />
+        <tv_fermantation_time />
+        <iv_soaking_time />
+        <tv_soaking_time />
+    </_content>
+</screen>

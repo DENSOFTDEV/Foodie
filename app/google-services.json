@@ -1,0 +1,135 @@
+{
+  "project_info": {
+    "project_number": "927478236453",
+    "firebase_url": "https://foodie-demp.firebaseio.com",
+    "project_id": "foodie-demp",
+    "storage_bucket": "foodie-demp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927478236453:android:ca87e7de5bc43da7",
+        "android_client_info": {
+          "package_name": "com.iblinfotech.foodierecipe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927478236453-27fml270t2jmobs3l58tp3ko2f767hqk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBayk_w1zl98neDKWjXOlw4EL1qYODVLG4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927478236453:android:ea976b64b5e2f437",
+        "android_client_info": {
+          "package_name": "com.ibl.apps.myphotokeyboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927478236453-27fml270t2jmobs3l58tp3ko2f767hqk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBayk_w1zl98neDKWjXOlw4EL1qYODVLG4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927478236453:android:4dedd5cc78597450",
+        "android_client_info": {
+          "package_name": "com.nanocorp.himom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927478236453-27fml270t2jmobs3l58tp3ko2f767hqk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBayk_w1zl98neDKWjXOlw4EL1qYODVLG4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927478236453:android:9ddd08ba36ed85b8",
+        "android_client_info": {
+          "package_name": "com.FitTastetic.FitnessRezepte"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927478236453-27fml270t2jmobs3l58tp3ko2f767hqk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBayk_w1zl98neDKWjXOlw4EL1qYODVLG4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
