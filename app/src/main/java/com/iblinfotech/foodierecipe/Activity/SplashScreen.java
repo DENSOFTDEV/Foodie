@@ -1,13 +1,13 @@
-package com.iblinfotech.foodierecipe;
+package com.iblinfotech.foodierecipe.Activity;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
+
 import com.crashlytics.android.Crashlytics;
+import com.iblinfotech.foodierecipe.R;
+
 import io.fabric.sdk.android.Fabric;
 
 public class SplashScreen extends AppCompatActivity {

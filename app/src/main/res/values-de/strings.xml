@@ -82,5 +82,16 @@
     <string name="store">OP TE SLAAN</string>
 
     <string name="banner_home_footer">ca-app-pub-7395961001191955/6472776414</string>
-    <string name="interstitial_full_screen" translatable="false">ca-app-pub-7395961001191955/3282849754</string>
+    <string name="interstitial_full_screen" translatable="true">ca-app-pub-7395961001191955/3282849754</string>
+    <!--<string name="interstitial_full_screen">ca-app-pub-3940256099942544/1033173712</string>-->
+
+    <string name="ok">OK</string>
+    <string name="fb_app_id">253045258523430</string>
+
+    <string name="video">Video</string>
+    <string name="setp_by_step">Schritt für Schritt</string>
+
+    <string name="restore">wiederherstellen</string>
+
+
 </resources>

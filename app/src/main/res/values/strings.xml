@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">Foodie</string>
 
-
-
     <!--LogIn-->
     <string name="login_to_ur_recipe_account">Login to your recipe account </string>
     <string name="username">Username</string>
@@ -53,7 +51,6 @@
     <string name="discover">Discover</string>
     <string name="discover_mode">DISCOVER MODE</string>
 
-
     <string name="add_to_shopping_list">ADD TO SHOPPING LIST</string>
     <string name="close">Close</string>
     <string name="add_all">Add All</string>
@@ -96,7 +93,6 @@
     <string name="browse_recipe">Browse Recipe</string>
     <string name="added_to_shopping_list">Ingredients Added to Shopping List</string>
 
-
     <!-- Google Admob Keys -->
     <string name="banner_home_footer">ca-app-pub-3940256099942544/6300978111</string>
     <string name="interstitial_full_screen">ca-app-pub-3940256099942544/1033173712</string>
@@ -104,10 +100,8 @@
     <!-- Facebook App Key -->
     <string name="fb_app_id">253045258523430</string>
 
-
-
     <string name="video">Video</string>
     <string name="setp_by_step">Step by step</string>
-
+    <string name="restore">Restore</string>
 
 </resources>

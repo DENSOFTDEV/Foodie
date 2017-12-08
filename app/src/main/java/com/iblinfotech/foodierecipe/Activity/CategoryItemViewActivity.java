@@ -1,4 +1,4 @@
-package com.iblinfotech.foodierecipe;
+package com.iblinfotech.foodierecipe.Activity;
 
 import android.content.ActivityNotFoundException;
 import android.content.ContentValues;
@@ -16,8 +16,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -25,8 +23,6 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -34,18 +30,16 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bluelinelabs.logansquare.LoganSquare;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.gson.Gson;
+import com.iblinfotech.foodierecipe.R;
 import com.iblinfotech.foodierecipe.SqLiteHelper.FoodieLocalData;
 import com.iblinfotech.foodierecipe.adapter.RecipeImageAdapter;
 import com.iblinfotech.foodierecipe.adapter.RecipeIngredientsAdapter;
-import com.iblinfotech.foodierecipe.fragments.MyShoppingList;
-import com.iblinfotech.foodierecipe.model.RecipeIngredientsData;
 import com.iblinfotech.foodierecipe.model.RecipeIngredientsDataNew;
 import com.iblinfotech.foodierecipe.model.ShoppingData;
 import com.iblinfotech.foodierecipe.model.SingleRecipeDetailData;
@@ -63,7 +57,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.UUID;
 
 import retrofit.Callback;
 import retrofit.RestAdapter;
@@ -96,11 +89,14 @@ public class CategoryItemViewActivity extends AppCompatActivity implements View.
     private ShoppingData shoppingItemData;
     private ContentValues contentValues;
     private AdView mAdView;
+    int removeAds;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        removeAds = GlobalClass.getPrefrenceInt(CategoryItemViewActivity.this, "removeads", 3);
 
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
 //            Window w = getWindow(); // in Activity's onCreate() for instance
@@ -118,7 +114,10 @@ public class CategoryItemViewActivity extends AppCompatActivity implements View.
         setContent();
         if (GlobalClass.isInternetOn(CategoryItemViewActivity.this)) {
             getRecipeDetail();
-            setAdMob();
+            if (removeAds != 0) {
+
+                setAdMob();
+            }
         } else {
             GlobalClass.showToast(CategoryItemViewActivity.this, getResources().getString(R.string.no_internet_connection));
             ll_categoryItemView.setVisibility(View.GONE);
@@ -589,7 +588,7 @@ public class CategoryItemViewActivity extends AppCompatActivity implements View.
 
                     alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.video), new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                            String pattern = "https?:\\/\\/(?:[0-9A-Z-]+\\.)?(?:youtu\\.be\\/|youtube\\.com\\S*[^\\w\\-\\s])([\\w\\-]{11})(?=[^\\w\\-]|$)(?![?=&+%\\w]*(?:['\"][^<>]*>|<\\/a>))[?=&+%\\w]*";
+//                            String pattern = "https?:\\/\\/(?:[0-9A-Z-]+\\.)?(?:youtu\\.be\\/|youtube\\.com\\S*[^\\w\\-\\s])([\\w\\-]{11})(?=[^\\w\\-]|$)(?![?=&+%\\w]*(?:['\"][^<>]*>|<\\/a>))[?=&+%\\w]*";
 //                            if (!recipe_video_url.isEmpty() && recipe_video_url.matches(pattern)) {
 //                                / Valid youtube URL
 //                                String short_url = recipe_video_url.substring(recipe_video_url.lastIndexOf('/') + 1, recipe_video_url.length());
@@ -622,10 +621,7 @@ public class CategoryItemViewActivity extends AppCompatActivity implements View.
                     intent.putExtra("mSingleRecipeToken", mSingleRecipeToken);
                     startActivity(intent);
                 }
-
-
                 break;
-
             case R.id.iv_fav:
                 if (GlobalClass.getPrefrenceBoolean(CategoryItemViewActivity.this, "isLogin", false) == true) {
                     isFav = !isFav;
@@ -644,9 +640,7 @@ public class CategoryItemViewActivity extends AppCompatActivity implements View.
                 intent2.putExtra("mSingleRecipeToken", mSingleRecipeToken);
                 startActivity(intent2);
                 break;
-
         }
-
     }
 
     public static void watchYoutubeVideo(Context context, String id) {
@@ -658,5 +652,4 @@ public class CategoryItemViewActivity extends AppCompatActivity implements View.
             context.startActivity(webIntent);
         }
     }
-
 }

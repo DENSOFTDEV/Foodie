@@ -1,26 +1,21 @@
-package com.iblinfotech.foodierecipe;
+package com.iblinfotech.foodierecipe.Activity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.iblinfotech.foodierecipe.R;
 import com.iblinfotech.foodierecipe.adapter.FragmentAdapter;
 import com.iblinfotech.foodierecipe.utils.GlobalClass;
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
 
 
 public class CategoryItemListActivity extends AppCompatActivity implements View.OnClickListener {
@@ -92,7 +87,6 @@ public class CategoryItemListActivity extends AppCompatActivity implements View.
                 detail_tabs.getChildAt(i).setBackgroundResource(R.drawable.bg_tab);
         }
 
-
         pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -114,14 +108,12 @@ public class CategoryItemListActivity extends AppCompatActivity implements View.
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-
             case R.id.iv_back:
                 finish();
                 break;
             case R.id.iv_search:
                 startActivity(new Intent(CategoryItemListActivity.this, SearchActivity.class));
                 break;
-
         }
     }
 }

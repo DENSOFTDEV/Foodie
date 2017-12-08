@@ -30,6 +30,10 @@ public class GlobalClass {
     static SharedPreferences.Editor editor;
     public static int DeviceWidth, DeviceHeight;
     public static boolean fbLogIn = false;
+    public static boolean key_isAdLock;
+
+    public static int is_purchase = 0;
+
 
     public GlobalClass(Context context) {
         // TODO Auto-generated constructor stub
@@ -111,11 +115,12 @@ public class GlobalClass {
     public static void printLog(String tag, String strMessage) {
         Log.e(tag, "-----------------------------------------" + strMessage);
     }
-    public static void showToast(Context context,String strMessage) {
-        Toast.makeText(context,strMessage,Toast.LENGTH_SHORT).show();
+
+    public static void showToast(Context context, String strMessage) {
+        Toast.makeText(context, strMessage, Toast.LENGTH_SHORT).show();
     }
 
-    public static void saveArray (Context context, HashMap<Object, ArrayList<RecipeIngredientsData>> arrayListHashMap) {
+    public static void saveArray(Context context, HashMap<Object, ArrayList<RecipeIngredientsData>> arrayListHashMap) {
 
         Log.e("storeShoppingList", "=====" + arrayListHashMap.size());
         SharedPreferences sharedpreferences = context.getSharedPreferences("ShoppingList", Context.MODE_PRIVATE);

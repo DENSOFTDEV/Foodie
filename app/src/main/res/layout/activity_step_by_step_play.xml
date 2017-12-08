@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_plain"
     android:orientation="vertical"
-    tools:context="com.iblinfotech.foodierecipe.StepByStepPlayActivity">
+    tools:context="com.iblinfotech.foodierecipe.Activity.StepByStepPlayActivity">
 
     <TextView
         android:id="@+id/tv_steps_not_available"

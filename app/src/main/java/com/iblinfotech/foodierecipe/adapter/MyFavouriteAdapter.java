@@ -16,7 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.iblinfotech.foodierecipe.CategoryItemViewActivity;
+import com.iblinfotech.foodierecipe.Activity.CategoryItemViewActivity;
 import com.iblinfotech.foodierecipe.R;
 import com.iblinfotech.foodierecipe.fragments.MyFavoriteFragment;
 import com.iblinfotech.foodierecipe.model.MyFavouriteData;

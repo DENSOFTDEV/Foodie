@@ -18,8 +18,7 @@ import android.widget.Toast;
 
 import com.bluelinelabs.logansquare.LoganSquare;
 import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.InterstitialAd;
-import com.iblinfotech.foodierecipe.MainActivity;
+import com.iblinfotech.foodierecipe.Activity.MainActivity;
 import com.iblinfotech.foodierecipe.R;
 import com.iblinfotech.foodierecipe.adapter.MyFavouriteAdapter;
 import com.iblinfotech.foodierecipe.model.MyFavouriteData;
@@ -54,6 +53,9 @@ public class MyFavoriteFragment extends Fragment implements View.OnClickListener
     private String user_id;
     public static ImageView imageView2;
 
+    int removeAds;
+
+
     public MyFavoriteFragment() {
     }
 
@@ -64,7 +66,18 @@ public class MyFavoriteFragment extends Fragment implements View.OnClickListener
         View view = inflater.inflate(R.layout.fragment_my_favourite, container, false);
         GlobalClass global = new GlobalClass(getContext());
         user_id = GlobalClass.getPrefrenceString(getContext(), "user_id", "");
-        showInterstitial();
+
+        try {
+            removeAds = GlobalClass.getPrefrenceInt(getContext(), "removeads", 3);
+            if (removeAds != 0) {
+                showInterstitial();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
         setContent(view);
         if (GlobalClass.isInternetOn(getContext())) {
 

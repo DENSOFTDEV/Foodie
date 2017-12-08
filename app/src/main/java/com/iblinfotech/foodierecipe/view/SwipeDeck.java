@@ -15,7 +15,7 @@ import android.widget.Adapter;
 import android.widget.FrameLayout;
 
 import com.daprlabs.cardstack.SwipeListener;
-import com.iblinfotech.foodierecipe.DiscoverSwipeActivity;
+import com.iblinfotech.foodierecipe.Activity.DiscoverSwipeActivity;
 import com.iblinfotech.foodierecipe.utils.GlobalClass;
 
 import java.util.ArrayList;

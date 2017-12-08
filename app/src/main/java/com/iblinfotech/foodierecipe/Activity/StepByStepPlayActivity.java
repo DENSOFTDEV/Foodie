@@ -1,25 +1,21 @@
-package com.iblinfotech.foodierecipe;
+package com.iblinfotech.foodierecipe.Activity;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.iblinfotech.foodierecipe.R;
 import com.iblinfotech.foodierecipe.adapter.RecipeStepsAdapter;
 import com.iblinfotech.foodierecipe.utils.GlobalClass;
-
-import static android.R.attr.fitsSystemWindows;
 
 public class StepByStepPlayActivity extends AppCompatActivity implements View.OnClickListener {
 

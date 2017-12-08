@@ -1,9 +1,8 @@
-package com.iblinfotech.foodierecipe;
+package com.iblinfotech.foodierecipe.Activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -11,14 +10,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bluelinelabs.logansquare.LoganSquare;
+import com.iblinfotech.foodierecipe.R;
 import com.iblinfotech.foodierecipe.adapter.RecipeReviewAdapter;
 import com.iblinfotech.foodierecipe.model.SingleRecipeDetailData;
 import com.iblinfotech.foodierecipe.utils.AppConfig;

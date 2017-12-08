@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="com.android.vending.BILLING" />
 
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -21,19 +22,19 @@
         android:theme="@style/AppTheme.StatusBarTransparent">
 
         <activity
-            android:name=".LogInActivity"
+            android:name=".Activity.LogInActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustPan" />
         <!-- android:theme="@style/AppTheme" -->
-        <activity android:name=".CropperActivity" />
+        <activity android:name=".Activity.CropperActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.StatusBarTransparent"
             android:windowSoftInputMode="stateHidden|adjustPan"
             ></activity>
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Activity.RegisterActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustPan"></activity>
 
@@ -59,35 +60,34 @@
             android:value="foodrecipe" />
 
         <activity
-            android:name=".CategoryItemListActivity"
+            android:name=".Activity.CategoryItemListActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".subscriptionmenu.PackageActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SearchActivity"
+            android:name=".Activity.SearchActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".CategoryItemViewActivity"
+            android:name=".Activity.CategoryItemViewActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".StepByStepPlayActivity"
+            android:name=".Activity.StepByStepPlayActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name=".Activity.ForgotPasswordActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ChangePasswordActivity"
+            android:name=".Activity.ChangePasswordActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ReviewActivity"
+            android:name=".Activity.ReviewActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AddReviewActivity"
+            android:name=".Activity.AddReviewActivity"
             android:screenOrientation="portrait" />
-
-        <activity android:name=".DiscoverSwipeActivity" />
-        <activity android:name=".SplashScreen">
+        <activity android:name=".Activity.DiscoverSwipeActivity" />
+        <activity android:name=".Activity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

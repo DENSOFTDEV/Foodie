@@ -152,8 +152,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
             android:gravity="center_horizontal"
             android:text="@string/dont_have_account"
             android:textColor="@color/darkblack"
@@ -161,8 +160,6 @@
 
         <com.google.android.gms.ads.AdView
             android:id="@+id/ads"
-            android:layout_marginTop="20dp"
-            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"

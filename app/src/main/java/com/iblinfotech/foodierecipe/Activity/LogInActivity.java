@@ -1,9 +1,8 @@
-package com.iblinfotech.foodierecipe;
+package com.iblinfotech.foodierecipe.Activity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -11,8 +10,6 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -39,6 +36,7 @@ import com.facebook.share.widget.ShareDialog;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.iblinfotech.foodierecipe.R;
 import com.iblinfotech.foodierecipe.utils.AppConfig;
 import com.iblinfotech.foodierecipe.utils.CallWebServices;
 import com.iblinfotech.foodierecipe.utils.GlobalClass;
@@ -65,9 +63,10 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
 
     private EditText edt_username, edt_password;
     private Button btn_login;
-    private TextView tv_forgotPass, tv_SignUp,textView2, fbLogin;;
+    private TextView tv_forgotPass, tv_SignUp, textView2, fbLogin;
+    ;
     private KProgressHUD kProgressHUD;
-    private String mUsername, mPassword,fb_id, fb_userName, fb_profilePic, fb_name, fb_email, fb_birthDate,fb_user_gender,device_id;
+    private String mUsername, mPassword, fb_id, fb_userName, fb_profilePic, fb_name, fb_email, fb_birthDate, fb_user_gender, device_id;
     private LinearLayout lv_fblogin;
     private ImageView iv_back;
 
@@ -79,12 +78,14 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
     private final String PENDING_ACTION_BUNDLE_KEY = "com.progressgraphs.progressgraphs:PendingAction";
     private static final String PERMISSION = "publish_actions";
 
+    int removeAds;
 
     private FacebookCallback<Sharer.Result> shareCallback = new FacebookCallback<Sharer.Result>() {
         @Override
         public void onCancel() {
             Log.e("HelloFacebook", "Canceled");
         }
+
         @Override
         public void onError(FacebookException error) {
             Log.e("fb error", "" + error);
@@ -111,6 +112,9 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        removeAds = GlobalClass.getPrefrenceInt(LogInActivity.this, "removeads", 3);
+        Log.e("removeAds", "---remove ads--" + removeAds);
 
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
 //            Window w = getWindow(); // in Activity's onCreate() for instance
@@ -184,18 +188,23 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         GlobalClass global = new GlobalClass(LogInActivity.this);
         setContent();
         if (GlobalClass.isInternetOn(LogInActivity.this)) {
-            setAdMob();
+            if (removeAds != 0) {
+                setAdMob();
+            }
+
         } else {
             Toast.makeText(LogInActivity.this, R.string.no_internet_connection, Toast.LENGTH_SHORT).show();
         }
     }
 
     private void setAdMob() {
-        mAdView = (AdView)findViewById(R.id.ads);
-        AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+        mAdView = (AdView) findViewById(R.id.ads);
+        mAdView.setVisibility(View.VISIBLE);
+
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
         mAdView.loadAd(adRequest);
         mAdView.setAdListener(new AdListener() {
+
             @Override
             public void onAdLoaded() {
                 mAdView.setVisibility(View.VISIBLE);
@@ -228,21 +237,22 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
 
             if (event.getAction() == MotionEvent.ACTION_UP
                     && (x < w.getLeft() || x >= w.getRight()
-                    || y < w.getTop() || y > w.getBottom()) ) {
-                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                    || y < w.getTop() || y > w.getBottom())) {
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(getWindow().getCurrentFocus().getWindowToken(), 0);
             }
         }
         return ret;
     }
+
     private void setContent() {
         GlobalClass global = new GlobalClass(this);
         device_id = GlobalClass.getPrefrenceString(this, "device_id", "");
         if (GlobalClass.isInternetOn(LogInActivity.this)) {
             if (GlobalClass.getPrefrenceBoolean(LogInActivity.this, "isLogin", false) == true) {
 //                startActivity(new Intent(LogInActivity.this, MainActivity.class));
-                Intent intent=new Intent(LogInActivity.this, MainActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
+                Intent intent = new Intent(LogInActivity.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
         } else {
@@ -277,8 +287,8 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         edt_password.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId== EditorInfo.IME_ACTION_DONE){
-                    Log.e("------------------",":::::::::"+edt_password.getText().toString());
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    Log.e("------------------", ":::::::::" + edt_password.getText().toString());
                     if (GlobalClass.isInternetOn(LogInActivity.this)) {
                         if (validateFieldsLogIn()) {
                             checkLogin();
@@ -294,11 +304,11 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
 
     private boolean validateFieldsLogIn() {
         if (!Validator.checkEmpty(edt_username)) {
-            Toast.makeText(LogInActivity.this,  getResources().getString(R.string.enterUsername), Toast.LENGTH_SHORT).show();
+            Toast.makeText(LogInActivity.this, getResources().getString(R.string.enterUsername), Toast.LENGTH_SHORT).show();
             return false;
         }
         if (!Validator.checkEmpty(edt_password)) {
-            Toast.makeText(LogInActivity.this,  getResources().getString(R.string.enterPassword), Toast.LENGTH_SHORT).show();
+            Toast.makeText(LogInActivity.this, getResources().getString(R.string.enterPassword), Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
@@ -344,12 +354,12 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
                         GlobalClass.setPrefrenceString(LogInActivity.this, "username", username);
                         GlobalClass.setPrefrenceString(LogInActivity.this, "user_image", user_image);
 
-                        Intent intent=new Intent(LogInActivity.this, MainActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
+                        Intent intent = new Intent(LogInActivity.this, MainActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                     } else {
                         GlobalClass.setPrefrenceBoolean(LogInActivity.this, "isLogin", false);
-                        Toast.makeText(LogInActivity.this,  mainResponseObject.getString(AppConfig.RESPONSE_MESSAGE), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LogInActivity.this, mainResponseObject.getString(AppConfig.RESPONSE_MESSAGE), Toast.LENGTH_SHORT).show();
                     }
                     GlobalClass.fbLogIn = false;
 
@@ -480,7 +490,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
                         finish();
                         Intent intent = new Intent(LogInActivity.this, MainActivity.class);
                         GlobalClass.fbLogIn = true;
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                         finish();
                     } else {

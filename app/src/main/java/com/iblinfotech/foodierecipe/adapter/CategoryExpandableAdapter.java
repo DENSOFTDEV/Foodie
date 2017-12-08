@@ -2,7 +2,6 @@ package com.iblinfotech.foodierecipe.adapter;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Typeface;
 import android.support.v7.app.AlertDialog;
@@ -13,10 +12,7 @@ import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.gson.Gson;
-import com.iblinfotech.foodierecipe.MainActivity;
 import com.iblinfotech.foodierecipe.R;
 import com.iblinfotech.foodierecipe.SqLiteHelper.FoodieLocalData;
 import com.iblinfotech.foodierecipe.fragments.MyShoppingList;
@@ -28,7 +24,6 @@ import com.iblinfotech.foodierecipe.utils.GlobalClass;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CategoryExpandableAdapter extends BaseExpandableListAdapter {
 

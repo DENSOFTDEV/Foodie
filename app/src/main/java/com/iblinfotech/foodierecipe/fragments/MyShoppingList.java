@@ -20,11 +20,10 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.gson.Gson;
-import com.iblinfotech.foodierecipe.MainActivity;
+import com.iblinfotech.foodierecipe.Activity.MainActivity;
 import com.iblinfotech.foodierecipe.R;
 import com.iblinfotech.foodierecipe.SqLiteHelper.FoodieLocalData;
 import com.iblinfotech.foodierecipe.adapter.CategoryExpandableAdapter;
-import com.iblinfotech.foodierecipe.adapter.IngredientShoppingListAdapter;
 import com.iblinfotech.foodierecipe.model.RecipeIngredientsData;
 import com.iblinfotech.foodierecipe.model.ShoppingData;
 import com.iblinfotech.foodierecipe.utils.GlobalClass;
@@ -40,19 +39,23 @@ public class MyShoppingList extends Fragment implements View.OnClickListener {
     public static HashMap<Object, ArrayList<RecipeIngredientsData>> expandableListDetail = new HashMap<>();
     private FoodieLocalData dbHelper;
     private AdView mAdView;
+    int removeAds;
 
     public MyShoppingList() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        removeAds = GlobalClass.getPrefrenceInt(getContext(), "removeads", 3);
 
 
         View homeView = inflater.inflate(R.layout.fragment_shopping_list, container, false);
 
         dbHelper = new FoodieLocalData(getActivity());
         setContent(homeView);
-        setAdMob(homeView);
+        if (removeAds != 0) {
+            setAdMob(homeView);
+        }
         getShoppingData();
         return homeView;
     }
@@ -68,6 +71,7 @@ public class MyShoppingList extends Fragment implements View.OnClickListener {
         btn_get_new_recipe.setTypeface(fontRegular);
         expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
             int previousGroup = -1;
+
             @Override
             public void onGroupExpand(int groupPosition) {
                 if (groupPosition != previousGroup)
@@ -102,6 +106,7 @@ public class MyShoppingList extends Fragment implements View.OnClickListener {
 
         });
     }
+
     private void getShoppingData() {
         ArrayList<ShoppingData> shoppingDataArrayList = new ArrayList<>();
         ArrayList<ShoppingData[]> recipeIngredientsDataArrayList = new ArrayList<>();

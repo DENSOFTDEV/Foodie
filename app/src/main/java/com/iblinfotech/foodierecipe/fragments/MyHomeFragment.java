@@ -18,10 +18,10 @@ import com.bluelinelabs.logansquare.LoganSquare;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
-import com.iblinfotech.foodierecipe.DiscoverSwipeActivity;
+import com.iblinfotech.foodierecipe.Activity.DiscoverSwipeActivity;
+import com.iblinfotech.foodierecipe.Activity.LogInActivity;
 import com.iblinfotech.foodierecipe.R;
-import com.iblinfotech.foodierecipe.SearchActivity;
+import com.iblinfotech.foodierecipe.Activity.SearchActivity;
 import com.iblinfotech.foodierecipe.adapter.CategoryAdapter;
 import com.iblinfotech.foodierecipe.model.RecipeCatagoryData;
 import com.iblinfotech.foodierecipe.utils.AppConfig;
@@ -49,6 +49,8 @@ public class MyHomeFragment extends Fragment {
     private TextView tv_discover, tv_search;
     private ImageView iv_search;
     private AdView mAdView;
+    int removeAds;
+
 
     public MyHomeFragment() {
     }
@@ -58,9 +60,14 @@ public class MyHomeFragment extends Fragment {
         View homeView = inflater.inflate(R.layout.fragment_home, container, false);
         setContent(homeView);
 
+        removeAds = GlobalClass.getPrefrenceInt(getContext(), "removeads", 3);
+
+
         if (GlobalClass.isInternetOn(getContext())) {
             getCatagories(homeView);
-            setAdMob(homeView);
+            if (removeAds != 0) {
+                setAdMob(homeView);
+            }
         } else {
             Toast.makeText(getActivity(), R.string.no_internet_connection, Toast.LENGTH_SHORT).show();
         }
@@ -93,7 +100,7 @@ public class MyHomeFragment extends Fragment {
 
     private void setAdMob(View view) {
 
-        mAdView = (AdView) view.findViewById(R.id.ads);
+        mAdView = (AdView) view.findViewById(R.id.ads2);
         AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
         mAdView.loadAd(adRequest);
         mAdView.setAdListener(new AdListener() {

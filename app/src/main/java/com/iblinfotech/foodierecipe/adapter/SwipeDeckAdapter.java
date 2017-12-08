@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.iblinfotech.foodierecipe.CategoryItemViewActivity;
+import com.iblinfotech.foodierecipe.Activity.CategoryItemViewActivity;
 import com.iblinfotech.foodierecipe.R;
 import com.iblinfotech.foodierecipe.model.DiscoverModeData;
 import com.iblinfotech.foodierecipe.utils.AppConfig;

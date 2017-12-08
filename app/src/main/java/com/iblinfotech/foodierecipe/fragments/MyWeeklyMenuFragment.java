@@ -18,6 +18,7 @@ import com.bluelinelabs.logansquare.LoganSquare;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.iblinfotech.foodierecipe.Activity.MainActivity;
 import com.iblinfotech.foodierecipe.R;
 import com.iblinfotech.foodierecipe.adapter.WeeklyRecipeAdapter;
 import com.iblinfotech.foodierecipe.model.WeeklyRecipyData;
@@ -62,6 +63,7 @@ public class MyWeeklyMenuFragment extends Fragment implements View.OnClickListen
     private String weekly_day;
     private LinearLayoutManager layoutManager;
     private AdView mAdView;
+    int removeAds;
 
 
     public MyWeeklyMenuFragment() {
@@ -73,6 +75,7 @@ public class MyWeeklyMenuFragment extends Fragment implements View.OnClickListen
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        removeAds = GlobalClass.getPrefrenceInt(getContext(), "removeads", 3);
 
         View view = inflater.inflate(R.layout.fragment_weekly_menu, container, false);
 
@@ -81,7 +84,9 @@ public class MyWeeklyMenuFragment extends Fragment implements View.OnClickListen
         setContent(view);
         if (GlobalClass.isInternetOn(getContext())) {
             getWeeklyMenu("week1");
-            setAdMob(view);
+            if (removeAds != 0) {
+                setAdMob(view);
+            }
         } else {
             Toast.makeText(getContext(), R.string.no_internet_connection, Toast.LENGTH_SHORT).show();
         }
@@ -187,10 +192,12 @@ public class MyWeeklyMenuFragment extends Fragment implements View.OnClickListen
             public void onAdLoaded() {
                 mAdView.setVisibility(View.VISIBLE);
             }
+
             @Override
             public void onAdClosed() {
                 mAdView.setVisibility(View.GONE);
             }
+
             @Override
             public void onAdFailedToLoad(int errorCode) {
                 mAdView.setVisibility(View.GONE);
@@ -271,10 +278,10 @@ public class MyWeeklyMenuFragment extends Fragment implements View.OnClickListen
             public void success(Response response, Response response2) {
                 try {
 
-                    Toast.makeText(getActivity(), "........."+response2, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(getActivity(), ".........1"+response, Toast.LENGTH_SHORT).show();
-                    Log.e("weekly", "success: "+response2 );
-                    Log.e("weekly", "success: "+response );
+                    Toast.makeText(getActivity(), "........." + response2, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), ".........1" + response, Toast.LENGTH_SHORT).show();
+                    Log.e("weekly", "success: " + response2);
+                    Log.e("weekly", "success: " + response);
                     kProgressHUD.dismiss();
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(response2.getBody().in()));
                     String stringResponse = bufferedReader.readLine();

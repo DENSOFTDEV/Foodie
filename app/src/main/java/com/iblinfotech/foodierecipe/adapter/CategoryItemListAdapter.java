@@ -1,7 +1,9 @@
 package com.iblinfotech.foodierecipe.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.iblinfotech.foodierecipe.CategoryItemViewActivity;
+import com.iblinfotech.foodierecipe.Activity.CategoryItemViewActivity;
 import com.iblinfotech.foodierecipe.R;
 import com.iblinfotech.foodierecipe.model.RecipeItemTitleData;
 import com.iblinfotech.foodierecipe.subscriptionmenu.PackageActivity;
@@ -29,6 +31,7 @@ public class CategoryItemListAdapter extends BaseAdapter {
     private List<RecipeItemTitleData> recipeItemTitleDatas = new ArrayList<>();
     private static LayoutInflater inflater = null;
     private ViewHolder holder;
+//    SharedPreferences sp;
 
     public CategoryItemListAdapter(Context context, List<RecipeItemTitleData> recipeItemTitleDatas) {
         this.context = context;
@@ -37,6 +40,7 @@ public class CategoryItemListAdapter extends BaseAdapter {
         if (context != null) {
             inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
+//        sp = context.getSharedPreferences("FoodieAPP", Activity.MODE_PRIVATE);
     }
 
     @Override
@@ -56,7 +60,6 @@ public class CategoryItemListAdapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-
 
         if (convertView == null) {
 
@@ -87,9 +90,17 @@ public class CategoryItemListAdapter extends BaseAdapter {
         holder.iv_recipe_item.getLayoutParams().height = ((int) (GlobalClass.DeviceWidth * 0.29));
 
         final String is_premium = recipeItemTitleDatas.get(position).getIs_premium();
-        Log.e("is_premium", "----is_premium-----" + is_premium);
+
+//        final int is_premium_purchased = sp.getInt("InApp-Purchase", 0);
+
+        final int is_premium_purchased = GlobalClass.getPrefrenceInt(context, "addpremiumrecipe", 3);
+
         if (is_premium.equals("1")) {
-            holder.iv_doller.setVisibility(View.VISIBLE);
+            if (is_premium_purchased == 1) {
+                holder.iv_doller.setVisibility(View.GONE);
+            } else {
+                holder.iv_doller.setVisibility(View.VISIBLE);
+            }
         } else {
             holder.iv_doller.setVisibility(View.GONE);
         }
@@ -103,8 +114,17 @@ public class CategoryItemListAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 if (is_premium.equals("1")) {
-                    Intent intent = new Intent(context, PackageActivity.class);
-                    context.startActivity(intent);
+                    if (is_premium_purchased == 1) {
+                        String token = recipeItemTitleDatas.get(position).getToken();
+                        Log.e("------------------", "token:: " + token);
+                        Intent intent = new Intent(context, CategoryItemViewActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        intent.putExtra("mSingleRecipeToken", recipeItemTitleDatas.get(position).getToken());
+                        context.startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(context, PackageActivity.class);
+                        context.startActivity(intent);
+                    }
                 } else {
                     String token = recipeItemTitleDatas.get(position).getToken();
                     Log.e("------------------", "token:: " + token);

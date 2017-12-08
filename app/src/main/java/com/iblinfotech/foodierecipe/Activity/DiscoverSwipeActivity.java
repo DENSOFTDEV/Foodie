@@ -1,18 +1,15 @@
-package com.iblinfotech.foodierecipe;
+package com.iblinfotech.foodierecipe.Activity;
 
 import android.graphics.Typeface;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bluelinelabs.logansquare.LoganSquare;
+import com.iblinfotech.foodierecipe.R;
 import com.iblinfotech.foodierecipe.adapter.SwipeDeckAdapter;
 import com.iblinfotech.foodierecipe.model.DiscoverModeData;
 import com.iblinfotech.foodierecipe.utils.AlertDialogParser;

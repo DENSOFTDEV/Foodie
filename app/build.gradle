@@ -10,14 +10,16 @@ apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "25.0.0"
+    buildToolsVersion '26.0.2'
     defaultConfig {
-//        applicationId "com.iblinfotech.foodierecipe"
+
         applicationId "com.FitTastetic.FitnessRezepte"
+//        applicationId "com.iblinfotech.foodierecipe"
+
         minSdkVersion 15
         targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        versionCode 5
+        versionName "1.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -48,7 +50,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-
     compile 'com.android.support:design:24.2.1'
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:recyclerview-v7:24.2.1'
@@ -75,6 +76,7 @@ dependencies {
     compile 'com.github.lsjwzh.RecyclerViewPager:lib:v1.1.1'
     compile 'com.google.firebase:firebase-crash:10.2.1'
     compile 'com.google.android.gms:play-services-ads:10.2.1'
+
     compile('com.crashlytics.sdk.android:crashlytics:2.6.8@aar') {
         transitive = true;
     }

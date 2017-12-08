@@ -1,4 +1,4 @@
-package com.iblinfotech.foodierecipe;
+package com.iblinfotech.foodierecipe.Activity;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -29,6 +29,7 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.firebase.crash.FirebaseCrash;
+import com.iblinfotech.foodierecipe.R;
 import com.iblinfotech.foodierecipe.adapter.MenuListAdapter;
 import com.iblinfotech.foodierecipe.fragments.MyFavoriteFragment;
 import com.iblinfotech.foodierecipe.fragments.MyHomeFragment;
@@ -60,6 +61,8 @@ public class MainActivity extends ActivityManagePermission implements Navigation
     private View view_weekly_backgroundColor;
     public static InterstitialAd interstitial;
     public static AdRequest adRequest;
+    int removeAds;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +71,11 @@ public class MainActivity extends ActivityManagePermission implements Navigation
         FirebaseCrash.log("Activity created");
         FirebaseCrash.logcat(Log.ERROR, "tag", "Message");
 
+        try {
+            removeAds = GlobalClass.getPrefrenceInt(MainActivity.this, "removeads", 3);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
 //            Window w = getWindow(); // in Activity's onCreate() for instance
 //            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
@@ -82,13 +90,14 @@ public class MainActivity extends ActivityManagePermission implements Navigation
         askPermission();
         setContent();
 
-        interstitial = new InterstitialAd(this);
-        interstitial.setAdUnitId(getString(R.string.interstitial_full_screen));
-        adRequest = new AdRequest.Builder().build();
-        interstitial.loadAd(adRequest);
+        if (removeAds != 0) {
+            interstitial = new InterstitialAd(this);
+            interstitial.setAdUnitId(getString(R.string.interstitial_full_screen));
+            adRequest = new AdRequest.Builder().build();
+            interstitial.loadAd(adRequest);
 //        requestWindowFeature(Window.FEATURE_NO_TITLE);
 //        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
+        }
     }
 
     public void askPermission() {
@@ -254,7 +263,7 @@ public class MainActivity extends ActivityManagePermission implements Navigation
                 tv_stor.setTextColor(getResources().getColor(R.color.colorAppName_cd4a2c));
                 tv_stor.setText("STORE");
                 cd_mainBackGround.setBackgroundResource(R.drawable.bg_plain);
-                Intent intent =  new Intent(MainActivity.this,PackageActivity.class);
+                Intent intent = new Intent(MainActivity.this, PackageActivity.class);
                 startActivity(intent);
                 drawer.closeDrawer(Gravity.LEFT);
                 finish();

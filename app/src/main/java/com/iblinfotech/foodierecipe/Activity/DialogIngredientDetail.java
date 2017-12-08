@@ -1,4 +1,4 @@
-package com.iblinfotech.foodierecipe;
+package com.iblinfotech.foodierecipe.Activity;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.iblinfotech.foodierecipe.R;
 import com.iblinfotech.foodierecipe.utils.GlobalClass;
 import com.squareup.picasso.Picasso;
 
@@ -36,7 +37,6 @@ public class DialogIngredientDetail extends Dialog implements View.OnClickListen
 //            Window w = getWindow(); // in Activity's onCreate() for instance
 //            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 //        }
-
 
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 //                WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -80,6 +80,4 @@ public class DialogIngredientDetail extends Dialog implements View.OnClickListen
                 break;
         }
     }
-
-
 }
